@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.Heart {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transform: rotate(-45deg);
+    margin: 50px auto;
+    animation: pulse 1s infinite alternate;
+}
+
+.Heart::before, .Heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.Heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.Heart::after {
+    top: 0;
+    left: 50px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1) rotate(-45deg); }
+    100% { transform: scale(1.1) rotate(-45deg); }
+}
+
+.smoke .decoration {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: smoke 3s infinite;
+}
+
+.smoke .decoration:nth-child(1) {
+    left: -20px;
+    animation-delay: 0.5s;
+}
+
+.smoke .decoration:nth-child(2) {
+    right: -20px;
+    animation-delay: 1s;
+}
+
+@keyframes smoke {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-50px); opacity: 0; }
+}
+
+.trunk {
+    width: 20px;
+    height: 50px;
+    background: brown;
+    margin: auto;
+}
+
+.message {
+    font-size: 20px;
+    margin-top: 10px;
+    color: pink;
+}
